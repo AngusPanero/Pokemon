@@ -1,11 +1,9 @@
 const getPokemon = document.getElementById("get-pokemon")
-const bulbasaur = document.querySelector(".bulbasaur");
-const charmander = document.querySelector(".charmander");
-const squirtle = document.querySelector(".squirtle");
+let pokemonSelect = document.getElementById("pokemon-select")
 const idPokemon = 1;
 const urlPokemon = `https://pokeapi.co/api/v2/pokemon/${idPokemon}`;
 
-function pokemonFetch (){
+getPokemon.addEventListener("click", () => {
     fetch(`https://pokeapi.co/api/v2/pokemon/${idPokemon}`)
     .then((response) => {
         if(!response.ok)
@@ -13,10 +11,10 @@ function pokemonFetch (){
                 return response.json()
     })
     .then ((data) => {
-        console.log(data);
-    })
+        console.log(data)
+        bulbasaur.innerHTML = `<h2>${data.forms[0].name}</h2>`
+        })
     .catch((error) => {
         console.error(error);
     })
-    };
-    pokemonFetch();
+    })
