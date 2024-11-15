@@ -39,7 +39,7 @@ function elegirPokemon (nombrePokemon) {
 
     pokemonSelect.addEventListener("change", () => {
         const selectedPokemon = pokemonSelect.value; // Obtener el Pokémon seleccionado
-        elegirPokemon(selectedPokemon); // Llamar la función para traer los datos del Pokémon
+        /* elegirPokemon(selectedPokemon) */; // Llamar la función para traer los datos del Pokémon
     });
     
     // Si se hace clic en el botón, también podemos obtener la información del Pokémon seleccionado
