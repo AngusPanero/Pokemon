@@ -1,10 +1,11 @@
 const getPokemon = document.getElementById("get-pokemon")
 let pokemonSelect = document.getElementById("pokemon-select")
 const idPokemon = 1;
-const urlPokemon = `https://pokeapi.co/api/v2/pokemon/${idPokemon}`;
 
-getPokemon.addEventListener("click", () => {
-    fetch(`https://pokeapi.co/api/v2/pokemon/${idPokemon}`)
+
+function elegirPokemon (nombrePokemon) {
+    const urlPokemon = `https://pokeapi.co/api/v2/pokemon/${nombrePokemon}`;
+    fetch(urlPokemon)
     
     .then((response) => {
         if(!response.ok)
@@ -33,4 +34,16 @@ getPokemon.addEventListener("click", () => {
         .catch((error) => {
         console.error(error);
         })
-    })
+    }
+
+
+    pokemonSelect.addEventListener("change", () => {
+        const selectedPokemon = pokemonSelect.value; // Obtener el Pokémon seleccionado
+        elegirPokemon(selectedPokemon); // Llamar la función para traer los datos del Pokémon
+    });
+    
+    // Si se hace clic en el botón, también podemos obtener la información del Pokémon seleccionado
+    getPokemon.addEventListener("click", () => {
+        const selectedPokemon = pokemonSelect.value; // Obtener el Pokémon seleccionado
+        elegirPokemon(selectedPokemon); // Llamar la función para traer los datos del Pokémon
+    });
