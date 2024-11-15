@@ -21,7 +21,7 @@ function elegirPokemon (nombrePokemon) {
             crearDiv.className = "pokemon-info" // le doy clase
             document.querySelector(".pokemon-form").appendChild(crearDiv) // lo hago hijo del form en una sola linea
         }
-        crearDiv.innerHTML = `
+        crearDiv.innerHTML += `
         <h2>${data.name.toUpperCase()}</h2>
         <img src=${data.sprites.front_default} alt="${data.name}">
         <h3>Tipo: ${data.types[0].type.name}</h3>
@@ -38,12 +38,12 @@ function elegirPokemon (nombrePokemon) {
 
 
     pokemonSelect.addEventListener("change", () => {
-        const selectedPokemon = pokemonSelect.value; // Obtener el Pokémon seleccionado
-        /* elegirPokemon(selectedPokemon) */; // Llamar la función para traer los datos del Pokémon
+        const selectedPokemon = pokemonSelect.value; // Obtengo el Pokémon seleccionado
+        
     });
     
-    // Si se hace clic en el botón, también podemos obtener la información del Pokémon seleccionado
+    
     getPokemon.addEventListener("click", () => {
-        const selectedPokemon = pokemonSelect.value; // Obtener el Pokémon seleccionado
-        elegirPokemon(selectedPokemon); // Llamar la función para traer los datos del Pokémon
+        const selectedPokemon = pokemonSelect.value; 
+        elegirPokemon(selectedPokemon); // Llamo la función para traer los datos
     });
