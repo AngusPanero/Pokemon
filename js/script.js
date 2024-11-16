@@ -21,14 +21,14 @@ function elegirPokemon (nombrePokemon) {
             crearDiv.className = "pokemon-info" // le doy clase
             document.querySelector(".pokemon-form").appendChild(crearDiv) // lo hago hijo del form en una sola linea
         }
-        crearDiv.innerHTML += `
+        crearDiv.innerHTML += `<div class="pokeDatos">
         <h2>${data.name.toUpperCase()}</h2>
         <img src=${data.sprites.front_default} alt="${data.name}">
         <h3>Tipo: ${data.types[0].type.name}</h3>
         <h3>Altura: ${data.height} Ft</h3>
         <h3>Peso: ${data.weight} Kg.</h3>
+        </div>
         `
-
         })
     
         .catch((error) => {
