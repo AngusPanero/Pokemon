@@ -24,7 +24,7 @@ function elegirPokemon (nombrePokemon) {
         crearDiv.innerHTML += `<div class="pokeDatos">
         <h2>${data.name.toUpperCase()}</h2>
         <img src=${data.sprites.front_default} alt="${data.name}">
-        <h3>Tipo: ${data.types[0].type.name}</h3>
+        <h3>Tipo: ${data.types[0].type.name.toUpperCase()}</h3>
         <h3>Altura: ${data.height} Ft</h3>
         <h3>Peso: ${data.weight} Kg.</h3>
         </div>
